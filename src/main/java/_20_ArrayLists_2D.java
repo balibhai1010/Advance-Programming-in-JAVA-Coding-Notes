@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 //2D ArrayLists = a dynamic lists of lists
 //you can change the size of these lists in run time
-public class ArrayLists_2D {
+public class _20_ArrayLists_2D {
 
 
 

@@ -1,5 +1,5 @@
 //**********************************************
-public class variables {
+public class _2_variables {
 
 
 
