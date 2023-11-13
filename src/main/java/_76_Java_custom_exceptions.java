@@ -11,7 +11,7 @@ class AgeException extends Exception{
         super(message);
     }
 }
-public class Custom_Exceptions {
+class Custom_Exceptions {
         public static void main(String args[]){
 
             Scanner scan = new Scanner(System.in);
