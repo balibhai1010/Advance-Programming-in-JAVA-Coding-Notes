@@ -1,6 +1,4 @@
-import java.sql.SQLOutput;
-
-public class Inner_Classes {
+public class _78_Java_inner_classes {
 
         public static void main(String[] args) {
 

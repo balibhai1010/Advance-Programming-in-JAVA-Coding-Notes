@@ -1,6 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-public class Exception_Handling {
+public class _44_Java_exception_handling {
         public static void main(String[] args) {
 
             // exception = 	an event that occurs during the execution of a program that,

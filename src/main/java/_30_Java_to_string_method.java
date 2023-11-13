@@ -38,6 +38,7 @@ public class _30_Java_to_string_method {
         String color = "red";
         int year = 2021;
 
+        @Override
         public String toString() {
 
             return make +"\n"+model+"\n"+color+"\n"+year;

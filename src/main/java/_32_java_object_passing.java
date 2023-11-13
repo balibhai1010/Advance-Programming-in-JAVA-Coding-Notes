@@ -43,6 +43,7 @@ class Car2 {
 
 
     String name;
+    @Override
     public String toString() {
 
         return name+"\n";
