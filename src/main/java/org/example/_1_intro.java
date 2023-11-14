@@ -1,3 +1,5 @@
+package org.example;
+
 // Ek Tuhi Nirankar
 public class _1_intro {
 

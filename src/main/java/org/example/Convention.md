@@ -41,7 +41,7 @@ _40_Java_copy_objects
 _41_Java_interface
 _42_Java_polymorphism
 _43_Java_dynamic_polymorphism
-_44_Java_exception_handling
+org.example._44_Java_exception_handling
 _45_Java_File_class
 _46_Java_FileWriter_write_to_a_file
 _47_Java_FileReader_read_a_file
@@ -75,7 +75,7 @@ _74_Java_enum
 _75_Java_HashMap
 _76_Java_custom_exceptions
 _77_Java_anonymous_objects
-_78_Java_inner_classes
+org.example._78_Java_inner_classes
 _79_Java_anonymous_inner_class
 _80_Java_lambda
 _81_Java_generics

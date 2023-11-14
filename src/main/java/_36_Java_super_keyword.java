@@ -5,7 +5,7 @@ public class _36_Java_super_keyword {
         public static void main(String[] args) {
 
             // super = 	keyword refers to the superclass (parent) of an object
-            //			very similar to the "this" keyword
+            //			very similar to the "this" keyword .......this.name stuff bhai
 
             Hero hero1 = new Hero("Batman",42,"$$$");
             Hero hero2 = new Hero("Superman",43,"everything");
@@ -37,11 +37,11 @@ public class _36_Java_super_keyword {
         String power;
 
         Hero(String name,int age,String power){
-            super(name,age);
+            super(name,age); //very similar to this stuff....
             this.power = power;
         }
 
         public String toString() {
             return super.toString()+this.power;
-        }
+        } //omg
     }//******************************************

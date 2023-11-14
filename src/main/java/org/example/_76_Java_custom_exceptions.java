@@ -1,8 +1,8 @@
-/*Exception :an event,after exception,that distrupts the normal
+package org.example;/*Exception :an event,after exception,that distrupts the normal
 *eg:ArithmaticException,ArrayIndexOutOfBoundsException,etc.
 *
 *User Defined Exception: Custom Exceptions
-*eg:AgeException,DuplicateEmail,etc.
+*eg:org.example.AgeException,DuplicateEmail,etc.
 * */
 
 import java.util.Scanner;

@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.*;
 public class _4_user_input_scanner {
     public static void main(String[] args) {

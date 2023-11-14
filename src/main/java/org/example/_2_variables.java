@@ -1,3 +1,5 @@
+package org.example;
+
 //**********************************************
 public class _2_variables {
 

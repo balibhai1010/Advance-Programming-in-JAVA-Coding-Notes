@@ -1,5 +1,3 @@
-import org.example.Main;
-
 public class _33_Java_static_keyword {
 
         public static void main(String[] args) {

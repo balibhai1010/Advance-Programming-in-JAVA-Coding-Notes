@@ -1,3 +1,5 @@
+package org.example;
+
 public class _78_Java_inner_classes {
 
         public static void main(String[] args) {
