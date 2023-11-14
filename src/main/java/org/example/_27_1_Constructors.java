@@ -1,3 +1,5 @@
+package org.example;
+
 //******************************************************
 //Constructors = A special method that is called when an object is instantiated(created)
 //void? When a method's return type is void, it means the method doesn't return any value.

@@ -1,3 +1,5 @@
+package org.example;
+
 //******************************************************
 public class _27_2_Human {
     String name;
@@ -7,7 +9,7 @@ public class _27_2_Human {
     double weight;
 
 
-    _27_2_Human(String name, int age, double weight) { // _27_2_Human is a constructor
+    _27_2_Human(String name, int age, double weight) { // org.example._27_2_Human is a constructor
 
 
         this.name = name;

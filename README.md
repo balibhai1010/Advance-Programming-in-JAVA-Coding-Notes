@@ -23,7 +23,7 @@ Welcome to the "Java tutorial for beginners ☕" taught by Bro Code. This reposi
 14. Java nested loops ➿
 15. Java arrays 🚗
 16. Java 2D arrays 🚚
-17. Java String _22_methods 💬
+17. Java String org.example._22_methods 💬
 18. Java wrapper classes 🎁
 19. Java ArrayList 🧾
 20. Java 2D ArrayList 📜
@@ -111,7 +111,7 @@ Welcome to the "Java tutorial for beginners ☕" taught by Bro Code. This reposi
 102. Learn Priority Queue data structures in 5 minutes 🥇
 103. Learn Linked Lists in 13 minutes 🔗
 104. Dynamic Arrays 🌱
-105. LinkedLists vs _19_ArrayLists 🤼‍♂️
+105. LinkedLists vs org.example._19_ArrayLists 🤼‍♂️
 106. Learn Big O notation in 6 minutes 📈
 107. Learn Linear Search in 3 minutes ⬇️
 108. Learn Binary Search in 10 minutes 🪓

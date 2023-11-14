@@ -1,3 +1,5 @@
+package org.example;
+
 public class _35_Java_method_overriding {
 
 

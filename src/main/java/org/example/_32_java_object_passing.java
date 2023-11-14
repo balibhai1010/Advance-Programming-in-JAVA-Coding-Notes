@@ -1,3 +1,5 @@
+package org.example;
+
 public class _32_java_object_passing {
 
     public static void main(String[] args) {
@@ -44,7 +46,7 @@ class Car2 {
 
     String name;
     @Override
-    public String toString() {
+    public String toString() { //overriden classes
 
         return name+"\n";
 

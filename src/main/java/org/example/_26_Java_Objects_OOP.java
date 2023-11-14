@@ -1,3 +1,5 @@
+package org.example;
+
 //*******************************************
 //Object = an instance of class that may contain attributes and methods
 //attributes : characteristics the object has

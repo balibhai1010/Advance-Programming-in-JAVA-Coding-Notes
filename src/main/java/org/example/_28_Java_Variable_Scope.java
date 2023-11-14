@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.Random;
 // INSTANCE
 // In object-oriented programming, an instance refers to a specific occurrence or realization of a class,

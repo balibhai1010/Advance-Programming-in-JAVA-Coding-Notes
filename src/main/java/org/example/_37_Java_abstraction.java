@@ -1,10 +1,12 @@
+package org.example;
+
 public class _37_Java_abstraction {
         public static void main(String[] args) {
 
             // abstract =  	abstract classes cannot be instantiated, but they can have a subclass
             //				abstract methods are declared without an implementation
 
-            //Vehicle1 vehicle = new Vehicle1(); }so we cant use this line ,because its too big /nonsense acc.to our plan (security ,yay!!!)
+            //org.example.Vehicle1 vehicle = new org.example.Vehicle1(); }so we cant use this line ,because its too big /nonsense acc.to our plan (security ,yay!!!)
             Car4 car = new Car4();
 
             car.go();

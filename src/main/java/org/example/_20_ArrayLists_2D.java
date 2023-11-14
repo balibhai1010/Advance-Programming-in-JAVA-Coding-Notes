@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.ArrayList;
 //2D ArrayLists = a dynamic lists of lists
 //you can change the size of these lists in run time

@@ -1,3 +1,5 @@
+package org.example;
+
 public class _33_Java_static_keyword {
 
         public static void main(String[] args) {
@@ -16,7 +18,7 @@ public class _33_Java_static_keyword {
             System.out.println(friend2.numberOfFriends);
             System.out.println(friend3.numberOfFriends);
 
-            //this is not possible : System.out.println(Friend.numberOfFriendss);
+            //this is not possible : System.out.println(org.example.Friend.numberOfFriendss);
             System.out.println(friend1.numberOfFriendss);
             System.out.println(friend2.numberOfFriendss);
             System.out.println(friend3.numberOfFriendss);

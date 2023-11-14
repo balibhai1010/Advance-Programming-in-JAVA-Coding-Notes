@@ -1,3 +1,5 @@
+package org.example;
+
 public class _30_Java_to_string_method {
 
 
@@ -20,11 +22,11 @@ public class _30_Java_to_string_method {
             Car1 car = new Car1();
 
             //Explicit
-            System.out.println(car.toString()); //      eg: Car1@2a84aee7 without override
+            System.out.println(car.toString()); //      eg: org.example.Car1@2a84aee7 without override
 
             // or
             //Implicit way
-            System.out.println(car);//      eg: Car1@2a84aee7 without override
+            System.out.println(car);//      eg: org.example.Car1@2a84aee7 without override
 
 
         }

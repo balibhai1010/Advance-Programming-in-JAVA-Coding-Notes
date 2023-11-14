@@ -1,3 +1,5 @@
+package org.example;
+
 public class _38_Java_access_modifiers_public_protected_private {
     //access modifiers add level of security in our program
     //video is good for explain

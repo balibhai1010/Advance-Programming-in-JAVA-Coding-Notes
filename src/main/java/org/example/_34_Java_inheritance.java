@@ -1,3 +1,5 @@
+package org.example;
+
 public class _34_Java_inheritance {
     public static void main(String[] args) {
 

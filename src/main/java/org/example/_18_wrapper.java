@@ -1,3 +1,5 @@
+package org.example;
+
 public class _18_wrapper {
 
     public static void main(String[] args) {

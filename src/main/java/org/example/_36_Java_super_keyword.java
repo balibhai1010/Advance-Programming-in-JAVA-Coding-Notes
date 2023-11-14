@@ -1,3 +1,5 @@
+package org.example;
+
 public class _36_Java_super_keyword {
 
 

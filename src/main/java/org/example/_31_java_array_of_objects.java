@@ -1,4 +1,4 @@
-//Aim of this :
+package org.example;//Aim of this :
 //we can make int[] integerarray = new int[5];
 //and any datatype,but here,
 //We are gonna make our own Datatype
@@ -8,7 +8,7 @@ public class _31_java_array_of_objects{
 
  public static void main(String[] args) {
   // WAY 1 IS IN COMMENTS
-  //Food[] refrigerator = new Food[3];
+  //org.example.Food[] refrigerator = new org.example.Food[3];
 
   Food food1 = new Food("pizza");
   Food food2 = new Food("hamburger");
