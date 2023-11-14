@@ -1,6 +1,5 @@
 package org.example._39_Java_encapsulation;
 
-//***********************************************
 public class Car {
 
 
@@ -8,14 +7,12 @@ public class Car {
     private String model;
     private int year;
 
-    Car(String make, String model, int year) {
+    Car(String make,String model,int year){
         this.setMake(make);
         this.setModel(model);
         this.setYear(year);
     }
 
-//private stuff cannot be accessed by normal way ,they need getters and setters,LIKE BELOW,ELSE IT WILL BE NOT VISIBLE
-    //GETTERS
     public String getMake() {
         return this.make;
     }
@@ -28,7 +25,6 @@ public class Car {
         return this.year;
     }
 
-    //SETTERS
     public void setMake(String make) {
         this.make = make;
     }

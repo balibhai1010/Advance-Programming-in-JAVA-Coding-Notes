@@ -1,5 +1,4 @@
 package org.example._40_Java_copy_objects;
-
 //*********************************************
 public class Car {
 
@@ -8,13 +7,13 @@ public class Car {
     private String model;
     private int year;
 
-    Car(String make, String model, int year) {
+    Car(String make,String model,int year){
         this.setMake(make);
         this.setModel(model);
         this.setYear(year);
     }
 
-    Car(Car x) {
+    Car(Car x){
         this.copy(x);
     }
 
@@ -43,9 +42,11 @@ public class Car {
     }
 
     public void copy(Car x) {
-        this.setMake(x.getMake());
+        this.setMake(x.getMake()); //OMG THIS IS GREAT
         this.setModel(x.getModel());
         this.setYear(x.getYear());
     }
 
 }
+//*********************************************
+
