@@ -4,7 +4,7 @@ package org.example._43_Java_dynamic_polymorphism;
 * polymorphism = many shapes /forms
 * dynamic polymorphism = after compilation (during runtime)
 * eg : a corvette is a car,vehicle,and and object
-*
+* its used in like game options where we have to chose gender/shooting style or something and proceed common path of game
 *
 *
 *
