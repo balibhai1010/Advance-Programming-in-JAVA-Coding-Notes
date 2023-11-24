@@ -1,4 +1,4 @@
-package org.example.JavaFX_GUI.rough;
+package JavaFX_GUI.rough;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

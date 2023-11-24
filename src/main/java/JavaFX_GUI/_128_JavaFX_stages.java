@@ -1,5 +1,5 @@
 // Import necessary JavaFX classes
-package org.example.JavaFX_GUI;
+package JavaFX_GUI;
 
 import javafx.application.Application;
 import javafx.scene.Group;

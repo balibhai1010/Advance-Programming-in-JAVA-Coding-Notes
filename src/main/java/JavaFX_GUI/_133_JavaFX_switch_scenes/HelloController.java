@@ -1,4 +1,4 @@
-package org.example.JavaFX_GUI._133_JavaFX_switch_scenes;
+package JavaFX_GUI._133_JavaFX_switch_scenes;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

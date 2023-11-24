@@ -1,0 +1,831 @@
+#Print statement in here is not ...house spoonfeed...it will print at terminal screen only
+#and routine
+
+
+_140_JavaFX_DatePicker
+
+// ************ Controller.java ************
+package application;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+
+public class Controller {
+
+ @FXML
+ private DatePicker myDatePicker;
+ @FXML
+ private Label myLabel;
+
+ public void getDate(ActionEvent event) {
+
+  LocalDate myDate = myDatePicker.getValue();
+  String myFormattedDate = myDate.format(DateTimeFormatter.ofPattern("MMM-dd-yyyy"));
+  myLabel.setText(myFormattedDate);
+ }
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <DatePicker fx:id="myDatePicker" layoutX="213.0" layoutY="142.0" onAction="#getDate" promptText="Enter a date" />
+      <Label fx:id="myLabel" alignment="CENTER" layoutY="47.0" prefHeight="17.0" prefWidth="600.0" text="Label">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
+
+_141_JavaFX_ColorPicker
+
+
+Pinned by Bro Code
+@BroCodez
+2 years ago (edited)
+//************************Controller.java**************************
+package application;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+
+public class Controller {
+
+	@FXML
+	private Pane myPane;
+	@FXML
+	private ColorPicker myColorPicker;
+
+	public void changeColor(ActionEvent event) {
+
+		Color myColor = myColorPicker.getValue();
+		myPane.setBackground(new Background(new BackgroundFill(myColor, CornerRadii.EMPTY, Insets.EMPTY)));
+
+	}
+
+//*********************** Scene.fxml ***************************
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+
+
+<AnchorPane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <ColorPicker fx:id="myColorPicker" layoutX="238.0" layoutY="188.0" onAction="#changeColor">
+         <value>
+            <Color />
+         </value>
+      </ColorPicker>
+   </children>
+</AnchorPane>
+
+_142_JavaFX_ChoiceBox [Theory Transcript ??]
+
+Pinned by Bro Code
+@BroCodez
+2 years ago (edited)
+package application;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+
+public class Controller implements Initializable{
+
+	@FXML
+	private Label myLabel;
+
+	@FXML
+	private ChoiceBox<String> myChoiceBox;
+
+	private String[] food = {"pizza","sushi","ramen"};
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+
+		myChoiceBox.getItems().addAll(food);
+		myChoiceBox.setOnAction(this::getFood);
+
+	}
+
+	public void getFood(ActionEvent event) {
+
+		String myFood = myChoiceBox.getValue();
+		myLabel.setText(myFood);
+	}
+
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <ChoiceBox fx:id="myChoiceBox" layoutX="225.0" layoutY="188.0" prefWidth="150.0" />
+      <Label fx:id="myLabel" alignment="CENTER" layoutX="-2.0" layoutY="94.0" prefHeight="17.0" prefWidth="600.0" text="Select what you want to eat">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
+
+_143_JavaFX_Slider
+
+
+Pinned by Bro Code
+@BroCodez
+2 years ago (edited)
+package application;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+
+public class Controller implements Initializable{
+
+	@FXML
+	private Label myLabel;
+
+	@FXML
+	private Slider mySlider;
+
+	int myTemperature;
+
+	@Override
+	public void initialize(URL url, ResourceBundle resources) {
+
+		//we rewrote to not show anything else at opening of window except stuff
+		myTemperature = (int) mySlider.getValue();
+		myLabel.setText(Integer.toString(myTemperature) + "°C");
+
+		mySlider.valueProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldNumber, Number newNumber) {
+
+				myTemperature = (int) mySlider.getValue();
+				myLabel.setText(Integer.toString(myTemperature) + "°C");
+
+			}
+		});
+	}
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Slider fx:id="mySlider" layoutX="223.0" layoutY="32.0" majorTickUnit="10.0" minorTickCount="10" orientation="VERTICAL" prefHeight="336.0" prefWidth="14.0" showTickLabels="true" showTickMarks="true" value="50.0" />
+      <Label fx:id="myLabel" layoutX="301.0" layoutY="174.0" prefHeight="53.0" prefWidth="110.0" text="Label">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
+
+_144_JavaFX_ProgressBar
+
+
+@2ysh650
+1 year ago
+WARNING GUYSS!! If you are having "Character , is neither a decimal digit number, decimal point, nor "e" notation exponential mark."  problem, do not panic.
+normally double or int  variables uses "." to seperate decimals. When we convert it to String to format it, it turns out to be a "," and this problem annoyed me so much because i couldn't find a solution till now. After 4 fecking hours i come up with this easy solution.
+
+USE this ------>   BigDecimal progress = new BigDecimal(String.format("%.2f", 0.0).replace(",", "."));
+Simply we replace "," s with "." this.
+
+Pinned by Bro Code
+@BroCodez
+2 years ago
+package application;
+
+import java.math.BigDecimal;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.Slider;
+
+public class Controller implements Initializable{
+
+	@FXML
+	private ProgressBar myProgressBar;
+
+	@FXML
+	private Button myButton;
+
+	@FXML
+	private Label myLabel;
+
+	//The BigDecimal class gives its user complete control over rounding behavior
+	BigDecimal progress = new BigDecimal(String.format("%.2f", 0.0));
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+
+		myProgressBar.setStyle("-fx-accent: #00FF00;");
+
+	}
+
+	public void increaseProgress() {
+
+		if(progress.doubleValue() < 1) {
+			progress = new BigDecimal(String.format("%.2f", progress.doubleValue() + 0.1));
+			//System.out.println(progress.doubleValue());
+			myProgressBar.setProgress(progress.doubleValue());
+			myLabel.setText(Integer.toString((int)Math.round(progress.doubleValue() * 100)) + "%");
+		}
+	}
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <padding>
+      <Insets right="10.0" />
+   </padding>
+   <children>
+      <ProgressBar fx:id="myProgressBar" layoutX="37.0" layoutY="173.0" prefHeight="54.0" prefWidth="386.0" progress="0.0" />
+      <Button fx:id="myButton" layoutX="204.0" layoutY="292.0" mnemonicParsing="false" onAction="#increaseProgress" text="Button" />
+      <Label fx:id="myLabel" alignment="CENTER" layoutX="185.0" layoutY="83.0" text="Label">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
+
+_145_JavaFX_Spinner [Theory Transcript ??????????]
+
+Pinned by Bro Code
+@BroCodez
+2 years ago
+package application;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory;
+
+public class Controller implements Initializable{
+
+	@FXML
+	private Spinner<Integer> mySpinner;
+
+	@FXML
+	private Label myLabel;
+
+	int currentValue;
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+
+		SpinnerValueFactory<Integer> valueFactory =
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10);
+
+		valueFactory.setValue(1);
+
+		mySpinner.setValueFactory(valueFactory);
+
+		currentValue = mySpinner.getValue();
+
+		myLabel.setText(Integer.toString(currentValue));
+
+		mySpinner.valueProperty().addListener(new ChangeListener<Integer>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Integer> arg0, Integer arg1, Integer arg2) {
+
+				currentValue = mySpinner.getValue();
+
+				myLabel.setText(Integer.toString(currentValue));
+
+			}
+		});
+	}
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <padding>
+      <Insets right="10.0" />
+   </padding>
+   <children>
+      <Spinner fx:id="mySpinner" editable="true" layoutX="155.0" layoutY="188.0" />
+      <Label fx:id="myLabel" alignment="CENTER" layoutX="1.0" layoutY="97.0" prefHeight="45.0" prefWidth="459.0" text="Label">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
+
+_146_JavaFX_ListView
+
+
+Pinned by Bro Code
+@BroCodez
+2 years ago
+package application;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory;
+
+public class Controller implements Initializable{
+
+	@FXML
+	private ListView<String> myListView;
+
+	@FXML
+	private Label myLabel;
+
+	String[] food = {"pizza","sushi","ramen"};
+
+	String currentFood;
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+
+		myListView.getItems().addAll(food);
+
+		myListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+
+				currentFood = myListView.getSelectionModel().getSelectedItem();
+
+				myLabel.setText(currentFood);
+
+			}
+		});
+	}
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <padding>
+      <Insets right="10.0" />
+   </padding>
+   <children>
+      <ListView fx:id="myListView" layoutX="130.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label fx:id="myLabel" alignment="CENTER" layoutY="33.0" prefHeight="43.0" prefWidth="459.0" text="Select a food">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
+
+_147_JavaFX_TreeView
+
+
+Pinned by Bro Code
+@BroCodez
+2 years ago
+package application;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+
+public class Controller implements Initializable{
+
+	@FXML
+	private TreeView<String> treeView;
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+
+		TreeItem<String> rootItem = new TreeItem<>("Files");
+		//TreeItem<String> rootItem = new TreeItem<>("Files", new ImageView(new Image("Folder_Icon.png")));
+
+		TreeItem<String> branchItem1 = new TreeItem<>("Pictures");
+		TreeItem<String> branchItem2 = new TreeItem<>("Videos");
+		TreeItem<String> branchItem3 = new TreeItem<>("Music");
+
+		TreeItem<String> leafItem1 = new TreeItem<>("picture1");
+		TreeItem<String> leafItem2 = new TreeItem<>("picture2");
+		TreeItem<String> leafItem3 = new TreeItem<>("video1");
+		TreeItem<String> leafItem4 = new TreeItem<>("video2");
+		TreeItem<String> leafItem5 = new TreeItem<>("music1");
+		TreeItem<String> leafItem6 = new TreeItem<>("music2");
+
+		branchItem1.getChildren().addAll(leafItem1, leafItem2);
+		branchItem2.getChildren().addAll(leafItem3, leafItem4);
+		branchItem3.getChildren().addAll(leafItem5, leafItem6);
+
+		rootItem.getChildren().addAll(branchItem1, branchItem2, branchItem3);
+
+		//treeView.setShowRoot(false);
+		treeView.setRoot(rootItem);
+	}
+
+	public void selectItem() {
+
+		TreeItem<String> item = treeView.getSelectionModel().getSelectedItem();
+
+		if(item != null) {
+			System.out.println(item.getValue());
+		}
+	}
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <TreeView fx:id="treeView" layoutX="129.0" layoutY="27.0" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="347.0" prefWidth="343.0" />
+   </children>
+</AnchorPane>
+
+
+_148_JavaFX_MenuBar
+Just Menu and Advanced CS
+
+_149_JavaFX_FlowPane
+Just Flow Like Pattern grouping of elements.....
+Simuntaneous resizing ;0
+
+_150_JavaFX_GridPane
+adding row is on right click on grid on heiarchy
+we can copy pase like figma in screen builder
+
+_151_JavaFX_KeyEvent
+
+
+Pinned by Bro Code
+@BroCodez
+2 years ago
+package application;
+
+import java.io.IOException;
+
+import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
+
+public class Main extends Application {
+
+	@Override
+	public void start(Stage stage) throws IOException {
+
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene.fxml"));
+		Parent root = loader.load();
+		Controller controller = loader.getController();
+		Scene scene = new Scene(root);
+
+		scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+
+			@Override
+			public void handle(KeyEvent event) {
+
+				switch(event.getCode()) {
+
+				case W:
+					controller.moveUp();
+					break;
+				case S:
+					controller.moveDown();
+					break;
+				case A:
+					controller.moveLeft();
+					break;
+				case D:
+					controller.moveRight();
+					break;
+				default:
+					break;
+				}
+			}
+		});
+
+		stage.setScene(scene);
+		stage.show();
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
+
+package application;
+
+
+public class Controller{
+
+	public void moveUp() {
+
+		System.out.println("MOVIN' UP!");
+	}
+
+	public void moveDown() {
+
+		System.out.println("MOVIN' DOWN!");
+	}
+
+	public void moveLeft() {
+
+		System.out.println("MOVIN' LEFT!");
+	}
+
+	public void moveRight() {
+
+		System.out.println("MOVIN' RIGHT!");
+	}
+
+}
+
+_152_JavaFX_animations
+
+27/30
+JavaFX animations 🎬
+
+
+
+
+
+0:18 / 9:23
+
+🖨️  Transcript JavaFX animations 🎬
+
+Bro Code
+1.39M subscribers
+
+Subscribe
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+
+Share
+
+Download
+
+Save
+
+36K views  2 years ago  Java tutorial for beginners ☕
+javafx animation translation rotate fade scale tutorial example explained
+
+#javafx #animation #animations …
+29 Comments
+Siddhant Bali
+Add a comment...
+@BroCodez
+Pinned by Bro Code
+@BroCodez
+2 years ago
+package application;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
+import javafx.animation.RotateTransition;
+import javafx.animation.ScaleTransition;
+import javafx.animation.TranslateTransition;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.image.ImageView;
+import javafx.scene.transform.Rotate;
+import javafx.util.Duration;
+
+public class Controller implements Initializable{
+
+ @FXML
+ private ImageView myImage;
+
+ @Override
+ public void initialize(URL arg0, ResourceBundle arg1) {
+
+  // translate
+  TranslateTransition translate = new TranslateTransition();
+  translate.setNode(myImage);
+  translate.setDuration(Duration.millis(1000));
+  translate.setCycleCount(TranslateTransition.INDEFINITE);
+  translate.setByX(500);
+  translate.setByY(-250);
+  translate.setAutoReverse(true);
+  translate.play();
+  /*
+  // rotate
+  RotateTransition rotate = new RotateTransition();
+  rotate.setNode(myImage);
+  rotate.setDuration(Duration.millis(500));
+  rotate.setCycleCount(TranslateTransition.INDEFINITE);
+  rotate.setInterpolator(Interpolator.LINEAR);
+  rotate.setByAngle(360);
+  rotate.setAxis(Rotate.Z_AXIS);
+  rotate.play();
+
+  // fade
+  FadeTransition fade = new FadeTransition();
+  fade.setNode(myImage);
+  fade.setDuration(Duration.millis(1000));
+  fade.setCycleCount(TranslateTransition.INDEFINITE);
+  fade.setInterpolator(Interpolator.LINEAR);
+  fade.setFromValue(0);
+  fade.setToValue(1);
+  fade.play();
+
+  // scale
+  ScaleTransition scale = new ScaleTransition();
+  scale.setNode(myImage);
+  scale.setDuration(Duration.millis(1000));
+  scale.setCycleCount(TranslateTransition.INDEFINITE);
+  scale.setInterpolator(Interpolator.LINEAR);
+  scale.setByX(2.0);
+  scale.setByY(2.0);
+  scale.setAutoReverse(true);
+  scale.play();
+  */
+ }
+}
+
+_153_JavaFX_MediaView
+_154_JavaFX_WebView_building_a_web_browser
+_155_JavaFX_mp3_music_player

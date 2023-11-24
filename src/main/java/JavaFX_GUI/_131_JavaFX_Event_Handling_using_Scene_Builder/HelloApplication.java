@@ -1,4 +1,4 @@
-package org.example.JavaFX_GUI._131_JavaFX_Event_Handling_using_Scene_Builder;
+package JavaFX_GUI._131_JavaFX_Event_Handling_using_Scene_Builder;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
