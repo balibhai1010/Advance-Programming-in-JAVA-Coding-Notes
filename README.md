@@ -132,7 +132,7 @@ Welcome to the "Java tutorial for beginners ☕" taught by Bro Code. This reposi
 123. Learn Binary search trees in 20 minutes 🔍
 124. Learn Tree traversal in 3 minutes 🧗
 125. Calculate execution time ⏱️
-JAVA GUI AT ANOTHER LINK !!
+JavaFX GUI AT ANOTHER LINK !!
 126. JavaFX install & setup (Eclipse) 🌘
 127. JavaFX install & setup (IntelliJ) 💡
 128. JavaFX stages 🎭
