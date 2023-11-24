@@ -1,0 +1,131 @@
+JavaFX how to install Scene Builder Eclipse & IntelliJ
+
+Download:
+ 00:00:21
+Eclipse:
+ 00:01:50
+IntelliJ: 00:06:27
+
+https://gluonhq.com/products/scene-bu...
+
+---------------------------------------
+Download Scene Builder
+---------------------------------------
+1. google: javafx scene builder
+2. gluonhq.com
+3. download for your machine
+
+Remember the location of SceneBuilder.exe
+----------------------------------------------------------------------
+C - Program Files - Scene Builder - SceneBuilder.exe
+
+--------------------------------------------------------------
+To configure Eclipse with scene builder
+--------------------------------------------------------------
+
+1. Create a new FXML file
+----------------------------------------
+Right click on your project folder - New - Others - JavaFX - JavafXML document - next - Name: Main
+
+2. Link Scene Builder.exe
+---------------------------------------
+Window Tab - Preferences - JavaFX - browse for scene builder.exe
+
+3. Open Scene Builder
+-----------------------------------
+right click on FXML file - open with scene builder
+
+4. Working with Scene Builder
+-----------------------------------------------
+Add whichever nodes you want to Scene Builder and save
+File - Save As
+
+5. Within start() add the following
+-----------------------------------------------------
+Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"))
+add any necessary imports
+("Main.fxml" may need to be changed to "/Main.fxml")
+
+--------------------------------------------------------------
+To configure IntelliJ with scene builder
+--------------------------------------------------------------
+
+1. Link Scene Builder to IntelliJ
+-------------------------------------------------
+File - Settings - Languages and Frameworks - JavaFx
+
+2. Open Scene Builder
+-----------------------------------
+To open scene builder right click your fxml file
+Go to Scene Builder
+
+3. Working with Scene Builder
+-----------------------------------------------
+Add whichever nodes you want to Scene Builder and save
+File - Save As
+
+4. Within start() method, make sure you have this line
+-------------------------------------------------------------------------------------
+Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"))
+
+#JavaFX #Scene #Builder
+
+/**
+ * JavaFX Scene Builder Setup Video Notes
+ *
+ * Introduction:
+ * - Video hosted by "Bro."
+ * - Greeting and expressing well wishes to the audience.
+ * - Announcement of the topic: Installing and setting up Scene Builder for JavaFX.
+
+ * Purpose of the Video:
+ * - Demonstration of downloading, installing, and configuring Scene Builder for JavaFX.
+ * - Separate instructions provided for Eclipse and IntelliJ.
+
+ * Prerequisites:
+ * - Internet access to download Scene Builder.
+ * - Explanation to avoid Oracle's Scene Builder and use gluonhq.com.
+ * - Mention of timestamps in the description for easier navigation.
+
+ * Downloading and Installing Scene Builder:
+ * 1. Go to gluonhq.com.
+ * 2. Navigate to the download section and choose the desired version (e.g., version 15).
+ * 3. Select the appropriate download for your operating system (e.g., Windows).
+ * 4. Install Scene Builder, accepting the terms, and remembering the installation location.
+
+ * Setting Up Scene Builder for Eclipse:
+ * 1. Create a new FXML file in Eclipse (Right-click -> New -> Other -> FXML Document).
+ * 2. Name the file (e.g., main.fxml) and finish the wizard.
+ * 3. Link Scene Builder executable in Eclipse: Window -> Preferences -> JavaFX.
+ * 4. Browse for the location of the Scene Builder executable (scenebuilder.exe).
+ * 5. Open Scene Builder by right-clicking on the FXML file and selecting "Open with Scene Builder."
+
+ * Scene Builder Overview:
+ * - Explore the Scene Builder GUI: Library with various components, hierarchy of nodes.
+ * - Add containers, controls, and other nodes to the workspace.
+ * - Save the project in Scene Builder (File -> Save).
+
+ * Integrating Scene Builder with Eclipse (Code Modification):
+ * 1. In Eclipse, open the FXML file.
+ * 2. In the start method, add the line to load the FXML file:
+ *    ```java
+ *    Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+ *    ```
+ * 3. Ensure necessary imports are added (e.g., import javafx.fxml.FXMLLoader;).
+ * 4. If facing a null pointer exception, adjust the resource name: "main.fxml" or "/main.fxml."
+ * 5. Run the application, and the Scene Builder-created scene should display.
+
+ * Setting Up Scene Builder for IntelliJ:
+ * 1. Open IntelliJ and go to File -> Settings.
+ * 2. Navigate to Languages & Frameworks -> JavaFX.
+ * 3. Set the Scene Builder executable path to the installed location.
+ * 4. Open Scene Builder from IntelliJ by right-clicking on the FXML file and selecting "Open in Scene Builder."
+
+ * Conclusion:
+ * - Recap of steps for both Eclipse and IntelliJ.
+ * - Offer to share detailed steps in the description or comments.
+
+ * Closing:
+ * - Encouragement to like, comment, and subscribe.
+ * - Reminding viewers that learning is a two-way street: help the creator by engaging.
+ */

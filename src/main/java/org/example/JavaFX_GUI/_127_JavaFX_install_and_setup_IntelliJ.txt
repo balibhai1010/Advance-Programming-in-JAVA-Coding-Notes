@@ -1,0 +1,49 @@
+//Install javaFX Full !!!!!!!
+https://www.jetbrains.com/help/idea/javafx.html#troubleshoot
+https://www.jetbrains.com/help/idea/opening-fxml-files-in-javafx-scene-builder.html
+https://www.jetbrains.com/help/idea/packaging-javafx-applications.html
+
+//here it starts
+/home/baliking/IdeaProjects/javaFX/src/main/java/com/example/javafx/HelloApplication.java
+
+//sample code
+package com.example.javafx;
+//SAMPLE CODE
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class HelloApplication extends Application {
+    @Override
+    //SOME SAFETY EXCEPTIONS
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}
+//sample controller code
+package com.example.javafx;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
+public class HelloController {
+    @FXML
+    private Label welcomeText;
+
+    @FXML
+    protected void onHelloButtonClick() {
+        welcomeText.setText("Welcome to JavaFX Application!");
+    }
+}

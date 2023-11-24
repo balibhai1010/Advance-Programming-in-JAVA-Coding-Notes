@@ -1,0 +1,15 @@
+.root{
+    -fx-background-color: #111111;
+}
+
+.label{
+    -fx-font-size: 40;
+    -fx-font-family: "Lucida Console";
+    -fx-text-fill:"pink";
+    -fx-alignment: center;
+}
+
+#ONE{
+    -fx-font-size: 70;
+    -fx-text-fill:"yellow";
+}
