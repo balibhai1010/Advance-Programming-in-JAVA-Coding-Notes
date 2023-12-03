@@ -159,3 +159,17 @@ _152_JavaFX_animations
 _153_JavaFX_MediaView
 _154_JavaFX_WebView_building_a_web_browser
 _155_JavaFX_mp3_music_player
+
+
+OOPs
+interfaes
+Error Handling(very imp)
+Junit Testing
+Threads
+searlisasssttion
+Design Patterns
+Thread Pool
+
+
+gpt theory
+2022496	SIDDHANT  BALI	siddhant22496@iiitd.ac.in	BTech/CSD	LAB-321: 4:00PM - 6:00PM
