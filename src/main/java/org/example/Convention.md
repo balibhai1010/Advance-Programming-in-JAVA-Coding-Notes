@@ -46,6 +46,7 @@ _45_Java_File_class
 _46_Java_FileWriter_write_to_a_file
 _47_Java_FileReader_read_a_file
 _48_Java_audio
+
 _49_Java_GUI
 _50_Java_labels
 _51_Java_panels
@@ -70,6 +71,7 @@ _69_Java_MouseListener
 _70_Java_key_bindings
 _71_Java_2D_graphics
 _72_Java_2D_animation
+
 _73_Java_method_chaining
 _74_Java_enum
 _75_Java_HashMap
@@ -87,6 +89,7 @@ _86_Java_packages
 _87_Java_compile_and_run_with_command_prompt
 _88_Java_executable_jar
 _89_Java_encryption_program
+
 _90_Java_text_editor_app
 _91_Java_clock_app
 _92_Java_stopwatch
@@ -96,6 +99,7 @@ _95_Java_tic_tac_toe_game
 _96_Java_quiz_game
 _97_Java_snake_game
 _98_Java_pong_game
+
 _99_What_are_data_structures_and_algorithms
 _100_Learn_Stack_data_structures_in_10_minutes
 _101_Learn_Queue_data_structures_in_10_minutes
